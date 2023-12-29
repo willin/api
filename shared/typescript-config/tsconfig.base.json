@@ -1,15 +1,18 @@
 {
   "compilerOptions": {
-    "types": ["@cloudflare/workers-types"],
+    "types": ["@cloudflare/workers-types", "bun-types"],
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "ESNext",
     "module": "ESNext",
+    "declaration": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
+    "skipLibCheck": true,
     "strict": true,
     "lib": ["esnext"],
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx"
-  }
+  },
+  "exclude": ["node_modules", "dist"]
 }

@@ -9,10 +9,11 @@
     "lint": "prettier --write . && eslint --fix ."
   },
   "dependencies": {
-    "@shared/hono-app": "*",
     "@freshgum/typedi": "^0.7.1",
+    "@shared/hono-app": "*",
     "hono": "^3.11.8",
-    "reflect-metadata": "^0.2.1"
+    "reflect-metadata": "^0.2.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20231218.0",

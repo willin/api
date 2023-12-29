@@ -1,0 +1,62 @@
+{
+  "name": "@hono-dev/zod-body-validator",
+  "version": "0.1.0",
+  "description": "Zod Json/Form Validator Middleware",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup --clean ./src/index.ts --format esm,cjs --dts",
+    "prepublishOnly": "npm run build",
+    "test": "bun test --coverage",
+    "lint": "prettier --write . && eslint --fix ./src"
+  },
+  "peerDependencies": {
+    "hono": ">= 3",
+    "zod": ">= 3"
+  },
+  "devDependencies": {
+    "hono": "^3.11.8",
+    "tsup": "^8.0.1",
+    "zod": "^3.22.4"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "files": [
+    "LICENSE",
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.spec.*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willin/api.git"
+  },
+  "keywords": [
+    "hono",
+    "zod",
+    "validator",
+    "body",
+    "json",
+    "form"
+  ],
+  "author": "Willin Wang <willin@willin.org> (https://willin.wang/)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/willin/api/issues"
+  },
+  "homepage": "https://github.com/willin/api#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}

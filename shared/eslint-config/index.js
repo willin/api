@@ -16,6 +16,7 @@ module.exports = {
     semi: ['error', 'always'],
     quotes: ['error', 'single', { avoidEscape: true }],
     '@typescript-eslint/no-explicit-any': 'warn',
+    '@typescript-eslint/restrict-template-expressions': 'warn',
     'no-undef': ['error', { typeof: false }],
     'node/no-unsupported-features/node-builtins': [
       'error',
