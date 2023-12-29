@@ -4,7 +4,7 @@
   "author": "Willin Wang <willin@willin.org> (https://willin.wang/)",
   "license": "Apache-2.0",
   "scripts": {
-    "dev": "wrangler dev src/index.ts",
+    "dev": "wrangler dev src/index.ts --port 6300",
     "deploy": "wrangler deploy --minify src/index.ts"
   },
   "dependencies": {

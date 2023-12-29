@@ -5,7 +5,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "build": "turbo build",
-    "dev": "turbo dev",
+    "dev": "turbo dev --parallel",
     "changeset:version": "changeset version",
     "changeset:release": "changeset publish",
     "lint": "turbo run lint --parallel",
