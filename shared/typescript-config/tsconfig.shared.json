@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "types": ["@cloudflare/workers-types"],
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "preserveWatchOutput": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "strict": true
+  },
+  "exclude": ["node_modules"]
+}

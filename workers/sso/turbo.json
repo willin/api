@@ -1,0 +1,16 @@
+{
+  "extends": ["//"],
+  "pipeline": {
+    "build": {
+      "outputs": ["dist/**"]
+    },
+    "deploy": {},
+    "dev": {
+      "dependsOn": [],
+      "persistent": true
+    },
+    "test": {
+      "outputs": [".coverage/**"]
+    }
+  }
+}
