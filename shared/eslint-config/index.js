@@ -1,4 +1,6 @@
+// eslint-disable-next-line
 const { resolve } = require('node:path');
+// eslint-disable-next-line
 const project = resolve(process.cwd(), 'tsconfig.json');
 
 /** @type {import("eslint").Linter.Config} */
@@ -10,16 +12,11 @@ module.exports = {
     'eslint-config-turbo',
     'plugin:@typescript-eslint/recommended-requiring-type-checking'
   ],
-  plugins: ['only-warn'],
-  globals: {
-    React: true,
-    JSX: true
-  },
   rules: {
     semi: ['error', 'always'],
     quotes: ['error', 'single', { avoidEscape: true }],
     '@typescript-eslint/no-explicit-any': 'warn',
-    // 'no-undef': ['error', { typeof: false }],
+    'no-undef': ['error', { typeof: false }],
     'node/no-unsupported-features/node-builtins': [
       'error',
       {
@@ -36,11 +33,13 @@ module.exports = {
     ]
   },
   parserOptions: {
+    // eslint-disable-next-line
     project
   },
   settings: {
     'import/resolver': {
       typescript: {
+        // eslint-disable-next-line
         project
       }
     }

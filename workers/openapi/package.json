@@ -5,7 +5,8 @@
   "license": "Apache-2.0",
   "scripts": {
     "dev": "wrangler dev src/index.ts --port 6300",
-    "deploy": "wrangler deploy --minify src/index.ts"
+    "deploy": "wrangler deploy --minify src/index.ts",
+    "lint": "prettier --write . && eslint --fix ."
   },
   "dependencies": {
     "@shared/hono-app": "*",
