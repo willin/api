@@ -1,0 +1,5 @@
+{
+  "extends": "@shared/typescript-config/tsconfig.base.json",
+  "include": ["src/**/*.ts", "package.json"],
+  "exclude": ["node_modules"]
+}

@@ -1,21 +1,23 @@
 {
-  "name": "@worker/openapi",
+  "name": "@worker/example2",
   "private": true,
   "author": "Willin Wang <willin@willin.org> (https://willin.wang/)",
   "license": "Apache-2.0",
   "scripts": {
-    "dev": "wrangler dev src/index.ts --port 6300",
+    "dev": "wrangler dev src/index.ts --port 6301",
     "deploy": "wrangler deploy --minify src/index.ts",
     "lint": "prettier --write . && eslint --fix ."
   },
   "dependencies": {
+    "@hono-dev/powered-by": "*",
+    "@hono-dev/zod-openapi": "*",
     "@hono-dev/zod-openapi-decorators": "*",
-    "@shared/hono-app": "*",
     "@freshgum/typedi": "^0.7.1",
+    "@shared/hono-app": "*",
     "@hono/swagger-ui": "^0.2.1",
     "hono": "^3.11.8",
-    "openapi-merge": "^1.3.2",
-    "reflect-metadata": "^0.2.1"
+    "reflect-metadata": "^0.2.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20231218.0",

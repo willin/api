@@ -1,16 +1,20 @@
 {
-  "name": "@worker/sso",
+  "name": "@worker/example1",
   "private": true,
   "author": "Willin Wang <willin@willin.org> (https://willin.wang/)",
   "license": "Apache-2.0",
   "scripts": {
-    "dev": "wrangler dev src/index.ts --port 6301",
+    "dev": "wrangler dev src/index.ts --port 6302",
     "deploy": "wrangler deploy --minify src/index.ts",
     "lint": "prettier --write . && eslint --fix ."
   },
   "dependencies": {
+    "@hono-dev/powered-by": "*",
+    "@hono-dev/zod-openapi": "*",
+    "@hono-dev/zod-openapi-decorators": "*",
     "@freshgum/typedi": "^0.7.1",
     "@shared/hono-app": "*",
+    "@hono/swagger-ui": "^0.2.1",
     "hono": "^3.11.8",
     "reflect-metadata": "^0.2.1",
     "zod": "^3.22.4"
