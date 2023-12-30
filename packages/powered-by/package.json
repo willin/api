@@ -1,7 +1,7 @@
 {
-  "name": "@hono-dev/zod-body-validator",
-  "version": "0.1.0",
-  "description": "Zod Json/Form Validator Middleware",
+  "name": "@hono-dev/powered-by",
+  "version": "0.0.1",
+  "description": "A X-Powered-By Plugin for Hono",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -11,15 +11,14 @@
     "test": "bun test --coverage",
     "lint": "prettier --write . && eslint --fix ./src"
   },
+  "dependencies": {},
   "peerDependencies": {
-    "hono": ">= 3",
-    "zod": ">= 3"
+    "hono": ">=3"
   },
   "devDependencies": {
-    "hono": "^3.11.8",
+    "hono": "^3.11.10",
     "tsup": "^8.0.1",
-    "typescript": "^5.3.3",
-    "zod": "^3.22.4"
+    "typescript": "^5.3.3"
   },
   "exports": {
     ".": {
@@ -45,11 +44,9 @@
   },
   "keywords": [
     "hono",
-    "zod",
-    "validator",
-    "body",
-    "json",
-    "form"
+    "powered",
+    "by",
+    "middleware"
   ],
   "author": "Willin Wang <willin@willin.org> (https://willin.wang/)",
   "license": "Apache-2.0",

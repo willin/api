@@ -349,7 +349,7 @@ export class OpenAPIHono<
       }
       if (bodySchemas) {
         const validator = zBodyValidator(
-          z.union(bodySchemas) as any,
+          z.union(bodySchemas as any) as any,
           hook as any
         );
         validators.push(validator as any);
