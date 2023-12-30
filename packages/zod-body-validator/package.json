@@ -1,6 +1,6 @@
 {
   "name": "@hono-dev/zod-body-validator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Zod Json/Form Validator Middleware",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

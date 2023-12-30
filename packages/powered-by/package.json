@@ -1,6 +1,6 @@
 {
   "name": "@hono-dev/powered-by",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A X-Powered-By Plugin for Hono",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
