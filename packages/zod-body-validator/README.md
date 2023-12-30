@@ -3,6 +3,8 @@
 The validator middleware using [Zod](https://zod.dev) for [Hono](https://honojs.dev) applications.
 You can write a schema with Zod and validate the incoming values.
 
+For more details: <https://github.com/willin/api>
+
 ## Usage
 
 ```ts

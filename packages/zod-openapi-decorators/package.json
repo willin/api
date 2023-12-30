@@ -1,5 +1,5 @@
 {
-  "name": "@hono-dev/{{folder}}",
+  "name": "@hono-dev/zod-openapi-decorators",
   "version": "0.0.0",
   "description": "",
   "main": "./dist/index.js",
@@ -13,9 +13,13 @@
   },
   "dependencies": {},
   "peerDependencies": {
+    "@hono-dev/zod-openapi": ">=0.0",
+    "@freshgum/typedi": "^0.7",
     "hono": ">=3"
   },
   "devDependencies": {
+    "@hono-dev/zod-openapi": "*",
+    "@freshgum/typedi": "^0.7.1",
     "hono": "^3.11.10",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3"
@@ -44,7 +48,9 @@
   },
   "keywords": [
     "hono",
-    "middleware"
+    "middleware",
+    "openapi",
+    "decorators"
   ],
   "author": "Willin Wang <willin@willin.org> (https://willin.wang/)",
   "license": "Apache-2.0",

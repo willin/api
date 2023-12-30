@@ -1,12 +1,6 @@
-# Api Services for Willin Works
+# Hono Decorators For @hono-dev/zod-openapi
 
-## Development
-
-### Generate a new package/shared lib
-
-```bash
-bunx turbo gen package
-```
+For more details: <https://github.com/willin/api>
 
 ## 赞助 Sponsor
 

@@ -1,6 +1,6 @@
 # @hono-dev/powered-by
 
-For more details: <https://github.com/willin/sso>
+For more details: <https://github.com/willin/api>
 
 ## 赞助 Sponsor
 

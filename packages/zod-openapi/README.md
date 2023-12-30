@@ -4,6 +4,8 @@
 
 _Note: This is not standalone middleware but is hosted on the monorepo "[github.com/honojs/middleware](https://github.com/honojs/middleware)"._
 
+For more details: <https://github.com/willin/api>
+
 ## Usage
 
 ### Installation
@@ -18,10 +20,10 @@ npm i hono zod @hono-dev/zod-openapi
 
 #### Setting up your application
 
-First, define your schemas with Zod. The `z` object should be imported from `@hono/zod-openapi`:
+First, define your schemas with Zod. The `z` object should be imported from `@hono-dev/zod-openapi`:
 
 ```ts
-import { z } from '@hono/zod-openapi';
+import { z } from '@hono-dev/zod-openapi';
 
 const ParamsSchema = z.object({
   id: z
@@ -57,7 +59,7 @@ const UserSchema = z
 Next, create a route:
 
 ```ts
-import { createRoute } from '@hono/zod-openapi';
+import { createRoute } from '@hono-dev/zod-openapi';
 
 const route = createRoute({
   method: 'get',
@@ -81,7 +83,7 @@ const route = createRoute({
 Finally, set up the app:
 
 ```ts
-import { OpenAPIHono } from '@hono/zod-openapi';
+import { OpenAPIHono } from '@hono-dev/zod-openapi';
 
 const app = new OpenAPIHono();
 
@@ -379,7 +381,23 @@ const HeadersSchema = z.object({
 - [Zod to OpenAPI](https://github.com/asteasolutions/zod-to-openapi)
 - [Hono Zod OpenAPI](https://github.com/honojs/middleware/tree/main/packages/zod-openapi)
 
-## License
+## 赞助 Sponsor
+
+维护者 Owner： [Willin Wang](https://willin.wang)
+
+如果您对本项目感兴趣，可以通过以下方式支持我：
+
+- 关注我的 Github 账号：[@willin](https://github.com/willin) [![github](https://img.shields.io/github/followers/willin.svg?style=social&label=Followers)](https://github.com/willin)
+- 参与 [爱发电](https://afdian.net/@willin) 计划
+- 支付宝或微信[扫码打赏](https://user-images.githubusercontent.com/1890238/89126156-0f3eeb80-d516-11ea-9046-5a3a5d59b86b.png)
+
+Donation ways:
+
+- Github: <https://github.com/sponsors/willin>
+- Paypal: <https://paypal.me/willinwang>
+- Alipay or Wechat Pay: [QRCode](https://user-images.githubusercontent.com/1890238/89126156-0f3eeb80-d516-11ea-9046-5a3a5d59b86b.png)
+
+## 许可证 License
 
 Apache-2.0
 
