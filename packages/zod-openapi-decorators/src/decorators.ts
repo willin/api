@@ -1,4 +1,4 @@
-import { OpenAPIHono } from '@hono-dev/zod-openapi';
+import { OpenAPIHono, createRoute } from '@hono-dev/zod-openapi';
 import app from './app';
 import {
   ROUTE_PATHS,
@@ -24,26 +24,7 @@ export type MethodOptions = {
   openapi: OpenApiOptions;
 };
 
-export type RoutingPath<P extends string> =
-  P extends `${infer Head}/{${infer Param}}${infer Tail}`
-    ? `${Head}/:${Param}${RoutingPath<Tail>}`
-    : P;
-
-export const createRoute = <P extends string, R extends RouteConfig>(
-  routeConfig: Omit<R, 'path'> & { path?: P | undefined }
-) => {
-  return {
-    ...routeConfig,
-    getRoutingPath(): RoutingPath<RouteConfig['path']> {
-      return routeConfig?.path?.replaceAll(
-        /\/{(.+?)}/g,
-        '/:$1'
-      ) as RoutingPath<P>;
-    }
-  };
-};
-
-export function Route(prefix: string): ClassDecorator {
+export function Route(prefix: string = ''): ClassDecorator {
   return (targetConstructor) => {
     const routes = pathsContainer.getMany(ROUTE_PATHS).filter(
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -107,9 +88,11 @@ export function Route(prefix: string): ClassDecorator {
   };
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function MethodDecoratorFactory<T>(method: HTTPMethods) {
-  return (path: string, options: MethodOptions): MethodDecorator => {
+function MethodDecoratorFactory(method: HTTPMethods) {
+  return (
+    path: string = '',
+    options: MethodOptions = {} as MethodOptions
+  ): MethodDecorator => {
     return (targetConstructor, methodName) => {
       pathsContainer.set({
         id: ROUTE_PATHS,
@@ -130,6 +113,7 @@ function MethodDecoratorFactory<T>(method: HTTPMethods) {
     };
   };
 }
+
 export const Get = MethodDecoratorFactory('GET');
 export const Post = MethodDecoratorFactory('POST');
 export const Put = MethodDecoratorFactory('PUT');

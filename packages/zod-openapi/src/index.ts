@@ -10,7 +10,6 @@ import type {
   ZodRequestBody
 } from '@asteasolutions/zod-to-openapi';
 import {
-  OpenApiGeneratorV3,
   OpenApiGeneratorV31,
   OpenAPIRegistry
 } from '@asteasolutions/zod-to-openapi';
@@ -366,12 +365,6 @@ export class OpenAPIHono<
   };
 
   getOpenAPIDocument = (config: OpenAPIObjectConfig) => {
-    const generator = new OpenApiGeneratorV3(this.openAPIRegistry.definitions);
-    const document = generator.generateDocument(config);
-    return document;
-  };
-
-  getOpenAPI31Document = (config: OpenAPIObjectConfig) => {
     const generator = new OpenApiGeneratorV31(this.openAPIRegistry.definitions);
     const document = generator.generateDocument(config);
     return document;
@@ -384,17 +377,6 @@ export class OpenAPIHono<
     return this.get(path, (c) => {
       const config = typeof configure === 'function' ? configure(c) : configure;
       const document = this.getOpenAPIDocument(config);
-      return c.json(document);
-    }) as any;
-  };
-
-  doc31 = <P extends string>(
-    path: P,
-    configure: OpenAPIObjectConfigure<E, P>
-  ): OpenAPIHono<E, S & ToSchema<'get', P, {}, {}>, BasePath> => {
-    return this.get(path, (c) => {
-      const config = typeof configure === 'function' ? configure(c) : configure;
-      const document = this.getOpenAPI31Document(config);
       return c.json(document);
     }) as any;
   };
@@ -494,6 +476,7 @@ type RoutingPath<P extends string> =
     ? `${Head}/:${Param}${RoutingPath<Tail>}`
     : P;
 
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 export const createRoute = <
   P extends string,
   R extends Omit<RouteConfig, 'path' | 'method'> & {
@@ -505,7 +488,9 @@ export const createRoute = <
 ) => {
   return {
     ...routeConfig,
+    // @ts-ignore
     getRoutingPath(): RoutingPath<R['path']> {
+      // @ts-ignore
       return routeConfig.path.replaceAll(
         /\/{(.+?)}/g,
         '/:$1'
