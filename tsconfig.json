@@ -1,3 +1,4 @@
 {
-  "extends": "@shared/typescript-config/tsconfig.base.json"
+  "extends": "@shared/typescript-config/tsconfig.base.json",
+  "include": ["turbo/**/*"]
 }
