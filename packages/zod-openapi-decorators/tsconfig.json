@@ -1,2 +1,4 @@
-{ "extends": "@shared/typescript-config/tsconfig.shared.json", "include":
-["src/**/*.ts", "test/**/*.ts"] }
+{
+  "extends": "@shared/typescript-config/tsconfig.shared.json",
+  "include": ["src/**/*.ts", "test/**/*.ts"]
+}

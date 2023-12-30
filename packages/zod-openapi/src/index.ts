@@ -496,7 +496,10 @@ type RoutingPath<P extends string> =
 
 export const createRoute = <
   P extends string,
-  R extends Omit<RouteConfig, 'path'> & { path: P }
+  R extends Omit<RouteConfig, 'path' | 'method'> & {
+    path?: P | undefined;
+    method?: RouteConfig['method'] | undefined;
+  }
 >(
   routeConfig: R
 ) => {
